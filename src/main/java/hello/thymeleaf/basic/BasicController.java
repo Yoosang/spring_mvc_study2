@@ -18,6 +18,11 @@ import java.util.Map;
 @RequestMapping("/basic")
 public class BasicController {
 
+    @GetMapping("/index")
+    public String index(){
+        return "basic/basicIndex";
+    }
+
     @GetMapping("/text-basic")
     public String textBasic(Model model){
         model.addAttribute("data", "Hello <b>Spring!!</b>");
