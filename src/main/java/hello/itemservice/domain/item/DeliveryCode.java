@@ -1,4 +1,4 @@
-package hello.thymeleaf.itemservice.domain.item;
+package hello.itemservice.domain.item;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

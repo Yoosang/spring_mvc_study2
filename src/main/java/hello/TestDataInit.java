@@ -1,7 +1,7 @@
-package hello.thymeleaf;
+package hello;
 
-import hello.thymeleaf.itemservice.domain.item.Item;
-import hello.thymeleaf.itemservice.domain.item.ItemRepository;
+import hello.itemservice.domain.item.Item;
+import hello.itemservice.domain.item.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

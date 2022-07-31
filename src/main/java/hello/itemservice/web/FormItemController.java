@@ -1,9 +1,9 @@
-package hello.thymeleaf.itemservice.web;
+package hello.itemservice.web;
 
-import hello.thymeleaf.itemservice.domain.item.DeliveryCode;
-import hello.thymeleaf.itemservice.domain.item.Item;
-import hello.thymeleaf.itemservice.domain.item.ItemRepository;
-import hello.thymeleaf.itemservice.domain.item.ItemType;
+import hello.itemservice.domain.item.Item;
+import hello.itemservice.domain.item.ItemRepository;
+import hello.itemservice.domain.item.DeliveryCode;
+import hello.itemservice.domain.item.ItemType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
