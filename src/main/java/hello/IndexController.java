@@ -22,4 +22,9 @@ public class IndexController {
     public String validationIndex(){
         return "validation/validationIndex";
     }
+
+    @GetMapping("/login")
+    public String loginIndex(){
+        return "login/loginIndex";
+    }
 }
