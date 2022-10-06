@@ -28,20 +28,20 @@ public class ItemController {
     public String items(Model model) {
         List<LoginItem> items = itemRepository.findAll();
         model.addAttribute("items", items);
-        return "items/items";
+        return "login/items";
     }
 
     @GetMapping("/{itemId}")
     public String item(@PathVariable long itemId, Model model) {
         LoginItem item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
-        return "items/item";
+        return "login/item";
     }
 
     @GetMapping("/add")
     public String addForm(Model model) {
         model.addAttribute("item", new LoginItem());
-        return "items/addForm";
+        return "login/addForm";
     }
 
     @PostMapping("/add")
@@ -57,7 +57,7 @@ public class ItemController {
 
         if (bindingResult.hasErrors()) {
             log.info("errors={}", bindingResult);
-            return "items/addForm";
+            return "login/addForm";
         }
 
         //성공 로직
@@ -76,7 +76,7 @@ public class ItemController {
     public String editForm(@PathVariable Long itemId, Model model) {
         LoginItem item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
-        return "items/editForm";
+        return "login/editForm";
     }
 
     @PostMapping("/{itemId}/edit")
@@ -92,7 +92,7 @@ public class ItemController {
 
         if (bindingResult.hasErrors()) {
             log.info("errors={}", bindingResult);
-            return "items/editForm";
+            return "login/editForm";
         }
 
         LoginItem itemParam = new LoginItem();

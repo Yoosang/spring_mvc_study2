@@ -39,8 +39,8 @@ public class TestDataInit {
         beanValidationItemRepositoryV4.save(new BeanValidationItemV4("itemA", 10000, 10));
         beanValidationItemRepositoryV4.save(new BeanValidationItemV4("itemB", 20000, 20));
 
-        loginItemRepository.save(new LoginItem("itemA", 10000, 10));
-        loginItemRepository.save(new LoginItem("itemB", 20000, 20));
+        loginItemRepository.save(new LoginItem("login itemA", 10000, 10));
+        loginItemRepository.save(new LoginItem("login itemB", 20000, 20));
 
         Member member = new Member();
         member.setLoginId("test");
