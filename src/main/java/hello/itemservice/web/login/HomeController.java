@@ -2,6 +2,7 @@ package hello.itemservice.web.login;
 
 import hello.itemservice.domain.member.Member;
 import hello.itemservice.domain.member.MemberRepository;
+import hello.itemservice.web.login.session.SessionConst;
 import hello.itemservice.web.login.session.SessionManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Slf4j
 @Controller
@@ -43,7 +45,7 @@ public class HomeController {
         return "login/loginHome";
     }
 
-    @GetMapping("/home")
+    //@GetMapping("/home")
     public String homeLoginV2(HttpServletRequest request, Model model){
 
         Member member = (Member) sessionManager.getSession(request);
@@ -52,6 +54,24 @@ public class HomeController {
         }
 
         model.addAttribute("member", member);
+        return "login/loginHome";
+    }
+
+    @GetMapping("/home")
+    public String homeLoginV3(HttpServletRequest request, Model model){
+
+        log.info("homeLoginV3");
+        HttpSession session = request.getSession(false);
+        if(session == null){
+            return "login/home";
+        }
+
+        Member loginMember = (Member) session.getAttribute(SessionConst.LOGIN_MEMBER);
+        if(loginMember == null){
+            return "login/home";
+        }
+
+        model.addAttribute("member", loginMember);
         return "login/loginHome";
     }
 }
