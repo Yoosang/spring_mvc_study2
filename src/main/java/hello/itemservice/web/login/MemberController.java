@@ -19,16 +19,16 @@ public class MemberController {
 
     @GetMapping("/add")
     public String addForm(@ModelAttribute("member") Member member) {
-        return "members/addMemberForm";
+        return "login/addMemberForm";
     }
 
     @PostMapping("/add")
     public String save(@Valid @ModelAttribute Member member, BindingResult
             result) {
         if (result.hasErrors()) {
-            return "members/addMemberForm";
+            return "login/addMemberForm";
         }
         memberRepository.save(member);
-        return "redirect:/";
+        return "redirect:/home";
     }
 }
