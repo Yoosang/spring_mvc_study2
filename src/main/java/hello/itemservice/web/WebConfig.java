@@ -33,19 +33,19 @@ public class WebConfig implements WebMvcConfigurer {
         resolvers.add(new UserHandlerExceptionResolver());
     }
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LogInterceptor())
-                .order(1)
-                .addPathPatterns("/**")
-                .excludePathPatterns("/css/**", "/*.ico", "/error", "/error-page/**");
-
-        registry.addInterceptor(new LoginCheckInterceptor())
-                .order(2)
-                .addPathPatterns("/**")
-                .excludePathPatterns("/index.html", "/", "/index/**", "/home", "/members/add", "/login", "/logout",
-                        "/css/**", "/error*", "/*.ico", "/error-page/**", "/api/**", "/api2/**");
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(new LogInterceptor())
+//                .order(1)
+//                .addPathPatterns("/**")
+//                .excludePathPatterns("/css/**", "/*.ico", "/error", "/error-page/**");
+//
+//        registry.addInterceptor(new LoginCheckInterceptor())
+//                .order(2)
+//                .addPathPatterns("/**")
+//                .excludePathPatterns("/index.html", "/", "/index/**", "/home", "/members/add", "/login", "/logout",
+//                        "/css/**", "/error*", "/*.ico", "/error-page/**", "/api/**", "/api2/**");
+//    }
 
 //    @Bean
     public FilterRegistrationBean logFilter(){
